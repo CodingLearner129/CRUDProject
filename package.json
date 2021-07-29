@@ -1,0 +1,16 @@
+{
+  "name": "assignment_crudproject",
+  "version": "1.0.0",
+  "description": "This is project of Restful API that can /create/read/update/delete on db",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dhruvgp",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.0.1",
+    "mongoose": "^5.13.4"
+  }
+}
