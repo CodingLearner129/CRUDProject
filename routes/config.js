@@ -12,9 +12,9 @@ router.get("/product", async(req, res)=>{
         res.send("Error" + error);
     }
 });
-router.get("/product/:productId", async(req, res)=>{
+router.get("/product/:id", async(req, res)=>{
     try {
-        const product = await modelProduct.findById(req.params.productId);
+        const product = await modelProduct.findById(req.params.id);
         res.json(product);
     } catch (error) {
         res.send("Error" + error);
@@ -28,9 +28,9 @@ router.get("/category", async(req, res)=>{
         res.send("Error" + error);
     }
 });
-router.get("/category/:categoryId", async(req, res)=>{
+router.get("/category/:id", async(req, res)=>{
     try {
-        const category = await modelCategory.findById(req.params.categoryId);;
+        const category = await modelCategory.findById(req.params.id);
         res.json(category);
     } catch (error) {
         res.send("Error" + error);
@@ -68,9 +68,9 @@ router.post("/category", async(req, res)=>{
     }
 });
 
-router.patch("/product/:productId", async(req, res)=>{
+router.patch("/product/:id", async(req, res)=>{
     try {
-        const product = await modelProduct.findById(req.params.productId);
+        const product = await modelProduct.findById(req.params.id);
         product.productId= req.body.productId;
         product.productName= req.body.productName;
         product.qtyPerUnit= req.body.qtyPerUnit;
@@ -84,9 +84,9 @@ router.patch("/product/:productId", async(req, res)=>{
         res.send("Error" + error);
     }
 });
-router.patch("/category/:categoryId", async(req, res)=>{
+router.patch("/category/:id", async(req, res)=>{
     try {
-        const category = await modelCategory.findById(req.params.categoryId);
+        const category = await modelCategory.findById(req.params.id);
         category.categoryId= req.body.categoryId;
         category.categoryName= req.body.categoryName;
         const categoryRes= await category.save();
